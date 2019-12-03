@@ -12,7 +12,7 @@ char **move_up(char **buffer2d, size_map_t map)
     player_t p_pos;
     p_pos = get_position_p(buffer2d, map);
     if (buffer2d[p_pos.r - 1][p_pos.c] == ' '
-        || buffer2d[p_pos.r][p_pos.c] == 'O') {
+        || buffer2d[p_pos.r - 1][p_pos.c] == 'O') {
             buffer2d[p_pos.r][p_pos.c] = ' ';
             buffer2d[p_pos.r - 1][p_pos.c] = 'P';
             return (buffer2d);
@@ -33,7 +33,7 @@ char **move_down(char **buffer2d, size_map_t map)
     player_t p_pos;
     p_pos = get_position_p(buffer2d, map);
     if (buffer2d[p_pos.r + 1][p_pos.c] == ' '
-        || buffer2d[p_pos.r][p_pos.c] == 'O') {
+        || buffer2d[p_pos.r + 1][p_pos.c] == 'O') {
             buffer2d[p_pos.r][p_pos.c] = ' ';
             buffer2d[p_pos.r + 1][p_pos.c] = 'P';
             return (buffer2d);

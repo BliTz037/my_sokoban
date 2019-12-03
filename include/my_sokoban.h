@@ -33,6 +33,7 @@ char **load_2d_arr_file(char *buffer, int nb_rows, int nb_cols);
 size_map_t get_size_map(char *buffer);
 int get_nb_target(char *buffer);
 int **get_pos_nb_target(char **buffer2d, int nb_target, size_map_t map);
+char **refresh_target(char **buffer2d, int **pos_target, int nb_target);
 void sokoban(char **buffer, size_map_t map, int nb_target);
 player_t get_position_p(char **buffer2d, size_map_t map);
 void display_map(char **buffer2d, size_map_t map);

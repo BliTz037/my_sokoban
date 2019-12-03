@@ -31,6 +31,7 @@ void sokoban(char **buffer2d, size_map_t map, int nb_target)
     int **pos_target = get_pos_nb_target(buffer2d, nb_target, map);
     int ch;
     while (1) {
+        buffer2d = refresh_target(buffer2d, pos_target, nb_target);
         check_win(buffer2d, pos_target, nb_target);
         display_map(buffer2d, map);
         ch = getch();
@@ -61,6 +62,7 @@ int main(int ac, char **av)
     char **buffer2d;
     size_map_t map;
     int nb_target;
+
     if (ac != 2)
         return (84);
     buffer = load_file_in_mem(av[1]);

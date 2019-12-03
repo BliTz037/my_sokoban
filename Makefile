@@ -14,6 +14,7 @@ SRC	=	main.c \
 		input_key.c \
 		get_size_map.c \
 		get_pos_target.c \
+		refresh_target.c \
 		check_win.c
 
 NAME	=	my_sokoban
