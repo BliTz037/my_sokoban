@@ -5,7 +5,7 @@
 ** input_key
 */
 
-#include "include/my_sokoban.h"
+#include "my_sokoban.h"
 
 char **move_up(char **buffer2d, size_map_t map)
 {

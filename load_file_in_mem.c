@@ -5,7 +5,7 @@
 ** load_file_in_mem.c
 */
 
-#include "include/my_sokoban.h"
+#include "my_sokoban.h"
 
 char *load_file_in_mem(char const *filepath)
 {

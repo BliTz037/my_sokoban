@@ -31,9 +31,12 @@ int fs_open_file(char const *filepath);
 char *load_file_in_mem(char const *filepath);
 char **load_2d_arr_file(char *buffer, int nb_rows, int nb_cols);
 size_map_t get_size_map(char *buffer);
-void sokoban(char **buffer, size_map_t map);
+int get_nb_target(char *buffer);
+int **get_pos_nb_target(char **buffer2d, int nb_target, size_map_t map);
+void sokoban(char **buffer, size_map_t map, int nb_target);
 player_t get_position_p(char **buffer2d, size_map_t map);
 void display_map(char **buffer2d, size_map_t map);
+int check_win(char **buffer2d, int **pos_target, int nb_target);
 
 char **move_up(char **buffer2d, size_map_t map);
 char **move_down(char **buffer2d, size_map_t map);

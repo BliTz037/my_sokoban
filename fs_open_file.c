@@ -5,7 +5,7 @@
 ** File systems
 */
 
-#include "include/my_sokoban.h"
+#include "my_sokoban.h"
 
 int fs_open_file(char const *filepath)
 {

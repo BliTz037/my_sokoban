@@ -5,7 +5,7 @@
 ** main
 */
 
-#include "include/my_sokoban.h"
+#include "my_sokoban.h"
 
 player_t get_position_p(char **buffer2d, size_map_t map)
 {
@@ -24,12 +24,14 @@ player_t get_position_p(char **buffer2d, size_map_t map)
     return (p_position);
 }
 
-void sokoban(char **buffer2d, size_map_t map)
+void sokoban(char **buffer2d, size_map_t map, int nb_target)
 {
     initscr();
     keypad(stdscr, TRUE);
+    int **pos_target = get_pos_nb_target(buffer2d, nb_target, map);
     int ch;
     while (1) {
+        check_win(buffer2d, pos_target, nb_target);
         display_map(buffer2d, map);
         ch = getch();
         if (ch == KEY_UP)
@@ -58,11 +60,13 @@ int main(int ac, char **av)
     char *buffer;
     char **buffer2d;
     size_map_t map;
+    int nb_target;
     if (ac != 2)
         return (84);
     buffer = load_file_in_mem(av[1]);
+    nb_target = get_nb_target(buffer);
     map = get_size_map(buffer);
     buffer2d = load_2d_arr_file(buffer, map.rows, map.cols);
-    sokoban(buffer2d, map);
+    sokoban(buffer2d, map, nb_target);
     return (0);
 }

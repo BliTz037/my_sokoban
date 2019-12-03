@@ -5,7 +5,7 @@
 ** load_2d_arr_buffer
 */
 
-#include "include/my_sokoban.h"
+#include "my_sokoban.h"
 
 char **load_2d_arr_file(char *buffer, int nb_rows, int nb_cols)
 {

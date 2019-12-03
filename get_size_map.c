@@ -5,7 +5,7 @@
 ** get_size_map
 */
 
-#include "include/my_sokoban.h"
+#include "my_sokoban.h"
 
 size_map_t get_size_map(char *buffer)
 {
