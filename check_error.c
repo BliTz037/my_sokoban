@@ -7,12 +7,10 @@
 
 #include "my_sokoban.h"
 
-void check_error(int ac, char **av)
+void check_error(char **av)
 {
     int fd = 0;
 
-    if (ac != 2)
-        exit(84);
     fd = fs_open_file(av[1]);
     if (fd == 1)
         exit(84);
