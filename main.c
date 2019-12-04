@@ -68,6 +68,7 @@ int main(int ac, char **av)
     if (av[1][0] == '-' && av[1][1] == 'h')
         display_desc();
     buffer = load_file_in_mem(av[1]);
+    check_map(buffer);
     nb_target = get_nb_target(buffer);
     map = get_size_map(buffer);
     buffer2d = load_2d_arr_file(buffer, map.rows, map.cols);

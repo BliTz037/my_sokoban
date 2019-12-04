@@ -39,6 +39,7 @@ void display_map(char **buffer2d, size_map_t map);
 int check_win(char **buffer2d, int **pos_target, int nb_target);
 int check_lose(char **buffer2d, int **pos_target, int nb_target);
 void display_desc(void);
+void check_map(char *buffer);
 void my_putstr(char const *str);
 
 char **move_up(char **buffer2d, size_map_t map);
