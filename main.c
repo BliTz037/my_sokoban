@@ -63,8 +63,7 @@ int main(int ac, char **av)
     size_map_t map;
     int nb_target;
 
-    if (ac != 2)
-        return (84);
+    check_error(ac, av);
     if (av[1][0] == '-' && av[1][1] == 'h')
         display_desc();
     buffer = load_file_in_mem(av[1]);
