@@ -8,6 +8,9 @@
 INC =	-I./include/
 
 SRC	=	main.c \
+		description.c \
+		my_putchar.c \
+		my_putstr.c \
 		fs_open_file.c \
 		load_file_in_mem.c \
 		load_2d_arr_buffer.c \
