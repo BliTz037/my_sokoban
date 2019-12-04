@@ -37,16 +37,17 @@ void sokoban(char **buffer, size_map_t map, int nb_target);
 player_t get_position_p(char **buffer2d, size_map_t map);
 void display_map(char **buffer2d, size_map_t map);
 int check_win(char **buffer2d, int **pos_target, int nb_target);
-int check_lose(char **buffer2d, int **pos_target, int nb_target);
+void check_lose(char **buffer, size_map_t map, int nb_target);
 void display_desc(void);
 void check_error(int ac, char **av);
 void check_map(char *buffer);
 void my_putstr(char const *str);
 
-char **move_up(char **buffer2d, size_map_t map);
-char **move_down(char **buffer2d, size_map_t map);
-char **move_right(char **buffer2d, size_map_t map);
-char **move_left(char **buffer2d, size_map_t map);
+void check_input(char ***buffer2d, size_map_t map, int ch);
+void move_up(char **buffer2d, size_map_t map);
+void move_down(char **buffer2d, size_map_t map);
+void move_right(char **buffer2d, size_map_t map);
+void move_left(char **buffer2d, size_map_t map);
 
 #define DESC_1 "     map  file representing the warehouse map, "
 #define DESC_2 "containing '#' for walls, \n"

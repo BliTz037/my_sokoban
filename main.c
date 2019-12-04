@@ -33,16 +33,10 @@ void sokoban(char **buffer2d, size_map_t map, int nb_target)
     while (1) {
         buffer2d = refresh_target(buffer2d, pos_target, nb_target);
         check_win(buffer2d, pos_target, nb_target);
+        check_lose(buffer2d, map, nb_target);
         display_map(buffer2d, map);
         ch = getch();
-        if (ch == KEY_UP)
-            buffer2d = move_up(buffer2d, map);
-        if (ch == KEY_RIGHT)
-            buffer2d = move_right(buffer2d, map);
-        if (ch == KEY_LEFT)
-            buffer2d = move_left(buffer2d, map);
-        if (ch == KEY_DOWN)
-            buffer2d = move_down(buffer2d, map);
+        check_input(&buffer2d, map, ch);
         clear();
     }
     endwin();

@@ -14,8 +14,8 @@ char *load_file_in_mem(char const *filepath)
     struct stat sb;
 
     stat(filepath, &sb);
-    buffer = malloc(sb.st_size);
-    buffer[sb.st_size - 1] = '\0';
+    buffer = malloc(sb.st_size +1);
+    buffer[sb.st_size ] = '\0';
     read(fd, buffer, sb.st_size);
     close(fd);
     return (buffer);
