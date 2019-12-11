@@ -5,7 +5,7 @@
 ## Makefile Sokoban
 ##
 
-INC =	-I./include/
+CPPFLAGS =	-I./include/
 
 SRC	=	main.c \
 		description.c \
@@ -22,10 +22,12 @@ SRC	=	main.c \
 		check_lose.c \
 		check_error.c
 
+OBJ		=	$(SRC:.c=.o)
+
 NAME	=	my_sokoban
 
-all:
-	$(CC) -Wall -Wextra -o $(NAME) $(SRC) -lncurses $(INC)
+all:	$(OBJ)
+	gcc -Wall -Wextra -o $(NAME) $(OBJ)  $(CPPFLAGS) -lncurses
 
 clean:
 	rm -f $(OBJ)
